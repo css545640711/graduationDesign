@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
      * 读取xml样式文件中的控件
      * <p>
      * 通过标签定义的ID找到对应的控件
+     * findViewById 通过ID定位到对应控件
      */
     private void initView() {
         tabLayout = findViewById(R.id.tab_layout);

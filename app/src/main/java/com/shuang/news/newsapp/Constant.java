@@ -17,7 +17,7 @@ public class Constant {
     };
 
     public static final String[] TAB_URL_ARRAY = {
-            "娱乐",
+            "http://c.m.163.com/nc/article/list/T1348648517839/0-10.html",
             "体育",
             "财经",
             "科技",
