@@ -27,27 +27,35 @@ public class HttpConnectionHelper {
         HttpURLConnection conn = null;
         try {
             URL url = new URL(path);
+
+            LogUtil.i("http url: " + path);
+
             conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
-            conn.setConnectTimeout(10000);
+            conn.setConnectTimeout(10 * 1000);
             conn.connect();
 
             inputStream = conn.getInputStream();
-            byte[] buffer = new byte[1024];
+            byte[] buffer = new byte[4096];
             StringBuilder builder = new StringBuilder();
             while (inputStream.read(buffer) != -1) {
                 String s = new String(buffer, Charset.forName("utf-8"));
                 builder.append(s);
             }
             result = builder.toString();
+
+            LogUtil.i("http result: " + result);
+
             Message obtain = Message.obtain();
             obtain.obj = result;
             obtain.arg1 = MyHandler.CODE_OK;
             handler.sendMessage(obtain);
             inputStream.close();
             conn.disconnect();
+            return result;
         } catch (IOException e) {
             e.printStackTrace();
+            LogUtil.i("http error: " + e.getMessage());
         } finally {
             try {
                 if (inputStream != null)
@@ -59,6 +67,7 @@ public class HttpConnectionHelper {
                 conn.disconnect();
 
         }
+        LogUtil.i("http error: None");
         handler.sendEmptyMessage(MyHandler.CODE_NO);
         return result;
     }

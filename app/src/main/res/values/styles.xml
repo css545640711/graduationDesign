@@ -1,11 +1,19 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="BaseAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="android:windowNoTitle">true</item>//无标题
+        <item name="android:windowActionBar">false</item>//无ActionBar
+        <item name="android:windowFullscreen">true</item>//全屏即无通知栏
+        <item name="android:windowDisablePreview">true</item>//主要是这个
+        <item name="android:windowBackground">@color/windowBackground</item>//设置页面默认别背景色
     </style>
 
 </resources>

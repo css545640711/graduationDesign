@@ -29,11 +29,15 @@
       </value>
     </option>
   </component>
+<<<<<<< Updated upstream
 <<<<<<< HEAD
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
 =======
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="1.8" project-jdk-type="JavaSDK">
 >>>>>>> a36d4448426678a6f46468f8a488147d2fd58a62
+=======
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+>>>>>>> Stashed changes
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

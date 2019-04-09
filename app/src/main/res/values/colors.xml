@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+
+    <color name="windowBackground">#f5f5f5</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#3e3e3e</color>
+    <color name="transformBlack">#883e3e3e</color>
+    <color name="transformWrite">#88ffffff</color>
+    <color name="transform">#00000000</color>
 </resources>

@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.shuang.news.newsapp"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -30,4 +30,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //图片加载框架
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+    //json解析框架
+    implementation 'com.google.code.gson:gson:2.8.5'
 }

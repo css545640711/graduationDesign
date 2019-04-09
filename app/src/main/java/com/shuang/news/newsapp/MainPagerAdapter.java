@@ -1,9 +1,11 @@
 package com.shuang.news.newsapp;
 
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.view.ViewGroup;
 
 import com.shuang.news.newsapp.home.HomeFragment;
 
@@ -21,17 +23,22 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-        return HomeFragment.newInstance(Constant.TAB_URL_ARRAY[i]);
+        return HomeFragment.newInstance(Constants.TAB_URL_ARRAY[i]);
     }
 
     @Override
     public int getCount() {
-        return Constant.TAB_TITLE_ARRAY.length;
+        return Constants.TAB_TITLE_ARRAY.length;
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return Constant.TAB_TITLE_ARRAY[position];
+        return Constants.TAB_TITLE_ARRAY[position];
+    }
+
+    @Override
+    public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
+        //super.destroyItem(container, position, object);
     }
 }
