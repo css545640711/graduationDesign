@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'doubleShuang'
+            keyPassword 'shuang'
+            storeFile file('E:/graduationDesign/doubleShuang')
+            storePassword 'shuang'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.shuang.news.newsapp"
@@ -13,7 +21,12 @@ android {
     buildTypes {
         release {
             minifyEnabled false
+            signingConfig signingConfigs.config
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.config
         }
     }
 }
