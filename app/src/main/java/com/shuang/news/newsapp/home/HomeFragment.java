@@ -26,6 +26,9 @@ import com.shuang.news.newsapp.wrapper.adapter.EaseAdapter;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 列表内容展示页，例如“娱乐”列表页
+ */
 public class HomeFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener, EaseAdapter.OnItemClickListener {
 
     private String mServerUrl;
