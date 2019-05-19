@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NewsApp</string>
+    <string name="collection">收藏</string>
+    <string name="collectioned">已收藏</string>
 </resources>

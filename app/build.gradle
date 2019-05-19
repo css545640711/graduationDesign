@@ -5,7 +5,7 @@ android {
         config {
             keyAlias 'doubleShuang'
             keyPassword 'shuang'
-            storeFile file('E:/graduationDesign/doubleShuang')
+            storeFile file('../doubleShuang')
             storePassword 'shuang'
         }
     }

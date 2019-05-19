@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="5dp"
@@ -8,31 +9,117 @@
     <ImageView
         android:id="@+id/iv_background"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="225dp"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_public_time"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/iv_background"
+        android:background="@drawable/shape_transform"
+        android:lines="1"
+        android:paddingLeft="10dp"
+        android:textColor="@color/transformWrite" />
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/iv_background"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:maxLines="2"
         android:padding="5dp"
-        android:textColor="@color/black"
+        android:textColor="@color/transformWrite"
         android:textSize="15sp" />
 
     <TextView
+        android:id="@+id/iv_avatar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/iv_background"
+        android:layout_margin="5dp"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:id="@+id/tv_replay_num"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_background"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/iv_avatar"
+        android:drawableLeft="@mipmap/ic_browse_green"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        tools:text="111" />
+
+    <TextView
+        android:id="@+id/tv_vote_num"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_background"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/tv_replay_num"
+        android:drawableLeft="@mipmap/ic_vote_green"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        tools:text="111" />
+
+    <ImageView
+        android:id="@+id/iv_is_look"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_background"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/tv_vote_num"
+        android:src="@mipmap/ic_look_green"
+        android:textColor="@color/black" />
+
+    <TextView
         android:id="@+id/tv_source"
-        android:layout_width="match_parent"
-        android:layout_height="25dp"
-        android:layout_alignBottom="@+id/iv_background"
-        android:background="@drawable/shape_transform"
-        android:gravity="end"
-        android:lines="1"
-        android:paddingRight="20dp"
-        android:textColor="@color/transformWrite" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_replay_num"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/iv_avatar"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:textColor="@color/black"
+        tools:text="111" />
+
+    <TextView
+        android:id="@+id/tv_collection"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_background"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="14dp"
+        android:layout_marginRight="10dp"
+        android:drawableLeft="@mipmap/ic_collection_green"
+        android:drawablePadding="5dp"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:textColor="@color/black"
+        tools:text="@string/collection" />
+
+    <View
+        android:layout_width="0.5dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/iv_background"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_toLeftOf="@+id/tv_collection"
+        android:background="@color/line" />
 
 </RelativeLayout>

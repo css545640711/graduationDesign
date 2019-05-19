@@ -7,17 +7,15 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <android.support.v7.widget.Toolbar
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:background="@color/colorAccent"
         android:elevation="4dp"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:textSize="18sp" />
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white" />
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"

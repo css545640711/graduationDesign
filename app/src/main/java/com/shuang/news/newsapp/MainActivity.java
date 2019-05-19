@@ -1,9 +1,16 @@
 package com.shuang.news.newsapp;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+
+import com.shuang.news.newsapp.collection.CollectionActivity;
+import com.shuang.news.newsapp.history.HistoryActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
      * findViewById 通过ID定位到对应控件
      */
     private void initView() {
+        setSupportActionBar((Toolbar) findViewById(R.id.title));
         tabLayout = findViewById(R.id.tab_layout);
         pager = findViewById(R.id.view_pager);
 
@@ -52,5 +60,24 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initListener() {
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_collection_list:
+                startActivity(new Intent(this, CollectionActivity.class));
+                break;
+            case R.id.action_history_list:
+                startActivity(new Intent(this, HistoryActivity.class));
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

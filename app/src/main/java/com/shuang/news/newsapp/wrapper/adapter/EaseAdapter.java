@@ -1,5 +1,6 @@
 package com.shuang.news.newsapp.wrapper.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
@@ -21,6 +22,7 @@ public abstract class EaseAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     private List<T> mDatas;
     private int mResId;
     private OnItemClickListener mOnItemClickListener;
+    protected Context mContext;
 
     public EaseAdapter(int resId, List<T> datas) {
         mDatas = datas == null ? new ArrayList<T>() : datas;
@@ -30,8 +32,9 @@ public abstract class EaseAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        mContext = viewGroup.getContext();
         //布局填充器，负责将mResId对应布局填充到父布局中-viewGroup
-        LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
+        LayoutInflater inflater = LayoutInflater.from(mContext);
         //将mResId对应布局填充到父布局viewGroup中
         View view = inflater.inflate(mResId, viewGroup, false);
         return new ViewHolder(view);
@@ -68,7 +71,6 @@ public abstract class EaseAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
         } else {
             mDatas.addAll(list.subList(fromPos, list.size()));
         }
-        notifyItemRangeChanged(fromPos, size);
     }
 
     public void clear() {
@@ -81,7 +83,7 @@ public abstract class EaseAdapter<T> extends RecyclerView.Adapter<ViewHolder> {
 
     @Nullable
     public T getItemData(int pos) {
-        if (pos < mDatas.size() - 1)
+        if (pos < mDatas.size())
             return mDatas.get(pos);
         return null;
     }

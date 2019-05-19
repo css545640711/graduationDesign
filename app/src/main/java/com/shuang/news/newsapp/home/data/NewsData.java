@@ -4,13 +4,15 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
+import java.io.Serializable;
+
 /**
  * description:
  * author: Kisenhuang
  * email: Kisenhuang@163.com
  * time: 2019/4/9 下午2:10
  */
-public class NewsData implements Parcelable {
+public class NewsData implements Parcelable, Serializable {
 
     /**
      * votecount : 5981
@@ -35,22 +37,22 @@ public class NewsData implements Parcelable {
 
     public int votecount;
     public String docid;
-    public String lmodify;
+//    public String lmodify;
     public String url_3w;
     public String source;
-    public String postid;
-    public int priority;
+//    public String postid;
+//    public int priority;
     public String title;
     public String mtime;
     public String url;
     public int replyCount;
     public String ltitle;
     public String subtitle;
-    public String digest;
-    public String boardid;
+//    public String digest;
+//    public String boardid;
     public String imgsrc;
-    public String ptime;
-    public String daynum;
+//    public String ptime;
+//    public String daynum;
 
     @Override
     public int describeContents() {
@@ -61,22 +63,22 @@ public class NewsData implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(this.votecount);
         dest.writeString(this.docid);
-        dest.writeString(this.lmodify);
+//        dest.writeString(this.lmodify);
         dest.writeString(this.url_3w);
         dest.writeString(this.source);
-        dest.writeString(this.postid);
-        dest.writeInt(this.priority);
+//        dest.writeString(this.postid);
+//        dest.writeInt(this.priority);
         dest.writeString(this.title);
         dest.writeString(this.mtime);
         dest.writeString(this.url);
         dest.writeInt(this.replyCount);
         dest.writeString(this.ltitle);
         dest.writeString(this.subtitle);
-        dest.writeString(this.digest);
-        dest.writeString(this.boardid);
+//        dest.writeString(this.digest);
+//        dest.writeString(this.boardid);
         dest.writeString(this.imgsrc);
-        dest.writeString(this.ptime);
-        dest.writeString(this.daynum);
+//        dest.writeString(this.ptime);
+//        dest.writeString(this.daynum);
     }
 
     public NewsData() {
@@ -85,22 +87,22 @@ public class NewsData implements Parcelable {
     protected NewsData(Parcel in) {
         this.votecount = in.readInt();
         this.docid = in.readString();
-        this.lmodify = in.readString();
+//        this.lmodify = in.readString();
         this.url_3w = in.readString();
         this.source = in.readString();
-        this.postid = in.readString();
-        this.priority = in.readInt();
+//        this.postid = in.readString();
+//        this.priority = in.readInt();
         this.title = in.readString();
         this.mtime = in.readString();
         this.url = in.readString();
         this.replyCount = in.readInt();
         this.ltitle = in.readString();
         this.subtitle = in.readString();
-        this.digest = in.readString();
-        this.boardid = in.readString();
+//        this.digest = in.readString();
+//        this.boardid = in.readString();
         this.imgsrc = in.readString();
-        this.ptime = in.readString();
-        this.daynum = in.readString();
+//        this.ptime = in.readString();
+//        this.daynum = in.readString();
     }
 
     public static final Creator<NewsData> CREATOR = new Creator<NewsData>() {

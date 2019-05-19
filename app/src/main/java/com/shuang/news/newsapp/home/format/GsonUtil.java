@@ -1,5 +1,6 @@
 package com.shuang.news.newsapp.home.format;
 
+import android.support.annotation.Nullable;
 import android.text.TextUtils;
 
 import com.google.gson.Gson;
@@ -10,8 +11,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -22,31 +21,31 @@ import java.util.List;
  */
 public class GsonUtil {
 
-    public static <T> List<T> format(String json, Type type, int index) {
+    @Nullable
+    public static <T> List<T> format(String json, String key, Type type, int index) {
         try {
             JSONObject object = new JSONObject(json);
-            Iterator<String> keys = object.keys();
-            String value = "";
-            while (keys.hasNext()) {
-                value = object.getString(keys.next());
-            }
+            String value = object.optString(key);
             JSONArray array = new JSONArray(value);
             for (int i = 0; i < array.length(); i++) {
                 JSONObject jsonObject = array.getJSONObject(i);
                 String url = jsonObject.optString("url");
-                if (TextUtils.isEmpty(url))
+                String url_3w = jsonObject.optString("url_3w");
+
+                //移除第一个不规则项
+                if (TextUtils.isEmpty(url) && TextUtils.isEmpty(url_3w))
                     array.remove(i);
                 else {
                     break;
                 }
             }
 
-            return new Gson().fromJson(value, type);
+            return new Gson().fromJson(array.toString(), type);
         } catch (JSONException e) {
             e.printStackTrace();
             LogUtil.e("jsonFormat error : " + e.getMessage());
         }
-        return new ArrayList<>();
+        return null;
     }
 
 

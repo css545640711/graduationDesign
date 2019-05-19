@@ -23,7 +23,7 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int i) {
-        return HomeFragment.newInstance(Constants.TAB_URL_ARRAY[i]);
+        return HomeFragment.newInstance(Constants.TAB_URL_KEY_ARRAY[i]);
     }
 
     @Override
